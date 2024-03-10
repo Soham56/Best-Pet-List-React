@@ -12,6 +12,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+}
+
+.heading {
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
 }
 
 .doglist {
@@ -23,13 +32,14 @@ body {
 
 .dog {
     width: 30%;
-    background-image: url("../public/images/14710.jpg");
+    background-image: url("./images/14710.jpg");
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     border: 1px solid green;
+    position: relative;
 }
 
 .dog img {
@@ -42,11 +52,24 @@ body {
     margin: auto;
     background-color: lawngreen;
     padding: 0.5rem 1rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
     color: rgb(0, 145, 255);
 }
 
 .dog-data h4 {
     letter-spacing: 0.1rem;
+}
+
+.number {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    background-color: cadetblue;
+    padding: 1rem;
+    border-top-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: bold;
 }

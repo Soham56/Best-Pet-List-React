@@ -2,54 +2,44 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-const dogsList = [
-    {
-        img: "./images/golden-retriever-detail-scaled.jpg",
-        dogName: "Golden Retriever",
-        breedRegion: "Scottish breed",
-    },
-    {
-        img: "./images/rottweiler-guide.png",
-        dogName: "Rottweiler",
-        breedRegion: "Germen breed",
-    },
-    {
-        img: "./images/germen-shepherd-dog.jpg",
-        dogName: "Germen Shepherd",
-        breedRegion: "Germen breed",
-    },
-];
+import { dogsList } from "./dogs";
+import Dog from "./Dog";
 
 function DogList() {
     return (
-        <section className="doglist">
-            {dogsList.map((dog) => {
-                return <Dog {...dog}></Dog>;
-            })}
-            {/* <Dog {...firstDog}>
+        <>
+            <h2 className="heading">(-; Top Pet Breed ;-)</h2>
+            <section className="doglist">
+                {dogsList.map((dog) => {
+                    return <Dog {...dog} key={dog.id}></Dog>;
+                })}
+                {/* <Dog {...firstDog}>
                 <span>Hey I am retriever</span>
             </Dog>
             <Dog {...secondDog} />
             <Dog {...thirdDog} /> */}
-        </section>
-    );
-}
-
-function Dog(props) {
-    const { img, dogName, breedRegion, children } = props;
-    // console.log(props);
-    // console.log(children);
-    return (
-        <article className="dog">
-            <img src={img} alt={dogName}></img>
-            <div className="dog-data">
-                <h2>{dogName}</h2>
-                <h4>{breedRegion}</h4>
-            </div>
-        </article>
+            </section>
+        </>
     );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<DogList />);
+
+// assignment : basically onClick/ onSubmit always takes function reference , so if you can't pass the value through parameter. In that case either you can use closure concept , or you can use this -> onClick = {()=> getBook(id)} or onClick = {wrapperFunction};
+/*
+wrapperFunction = function (){
+     getBook(id)
+}
+*/
+
+// function getBook(id) {
+//     return () => {
+//         const book = dogsList.find((dog) => {
+//             return id === dog.id;
+//         });
+//         console.log(book);
+//         return book;
+//     };
+// }
